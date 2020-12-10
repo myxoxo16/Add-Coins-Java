@@ -1,0 +1,52 @@
+//Merna
+//October 19 2020
+//Description: create add coins application
+package Methods;
+import java.text.DecimalFormat;
+import java.util.Scanner; 
+public class AddCoins {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//input scanner
+		Scanner input = new Scanner(System.in);
+
+		//prompt question to user
+		System.out.println("Enter your total coins:");
+
+		//Print quarters
+		System.out.print("Quarters:");
+		int Q1 = input.nextInt();
+
+		//Print dimes
+		System.out.print("Dimes:");
+		int D1 = input.nextInt();
+
+		//Print nickels
+		System.out.print("Nickles:");
+		int N1 = input.nextInt();
+
+		//Print pennies
+		System.out.print("Pennies:");
+		int P1 = input.nextInt();
+
+		//Calculate and print the total
+		DecimalFormat fmt = new DecimalFormat("$#,###.##");
+		System.out.println("Total:"+fmt.format(calctotal(Q1, D1, N1,
+				P1)));
+	}
+	/**
+	 * Outputs each coin
+	 * pre: none
+	 * post: total amount in dollars
+	 */
+	//Return the total
+	public static double calctotal(int Q1, int D1, int N1, int P1) {
+		double total;
+		total=((0.25 * Q1) + (0.1 * D1) + (0.05 * N1) + (0.01 * P1));
+		return (total);
+
+
+	}
+
+}
